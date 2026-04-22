@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandroupoli Weather Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Alexandroupoli Weather Dashboard</h1>
+      <p class="source-note">
+        Data source: <a href="https://rp5.ru" target="_blank">rp5.ru</a>
+      </p>
+    </div>
+
+    <div class="header-center">
+      <button id="prevDayBtn">Previous day</button>
+      <input type="date" id="datePicker">
+      <button id="nextDayBtn">Next day</button>
+      <button id="loadBtn">Load</button>
+    </div>
+
+    <div class="header-right">
+      <a href="#" onclick="showAbout(); return false;">About</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="summary">
+      <h2 id="cityTitle">Alexandroupoli, Greece</h2>
+      <p id="selectedDateText">Showing data for: -</p>
+
+      <div class="weather-cards">
+        <div class="card">
+          <h3>Temperature</h3>
+          <p id="tempValue">-</p>
+        </div>
+
+        <div class="card">
+          <h3>Po</h3>
+          <p id="poValue">-</p>
+        </div>
+
+        <div class="card">
+          <h3>P</h3>
+          <p id="pValue">-</p>
+        </div>
+
+        <div class="card">
+          <h3>Last record</h3>
+          <p id="lastTimeValue">-</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
+
+    <section class="table-section">
+      <h3>Daily measurements</h3>
+
+      <div class="table-wrapper">
+        <table id="weatherTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date and time</th>
+              <th>Hour</th>
+              <th>Temp</th>
+              <th>Po</th>
+              <th>P</th>
+            </tr>
+          </thead>
+          <tbody id="weatherTableBody">
+            <tr>
+              <td colspan="6">No data loaded</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Weather data from <a href="https://rp5.ru" target="_blank">rp5.ru</a> |
+      Project by Tsialdartzis Dimirios |
+      2026
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
